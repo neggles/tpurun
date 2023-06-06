@@ -113,6 +113,8 @@ class TpuRunApp(App):
         tpu_log.set_status(f"Connecting to {tpu.externalIp}...")
         exit_code = None
         try:
+            command_str = " ".join(self.command)
+            tpu_log.write(f"{self.ssh_user}@{tpu.name}$ {command_str}")
             async with asyncssh.connect(
                 host=tpu.externalIp,
                 port=self.ssh_port,
@@ -120,8 +122,6 @@ class TpuRunApp(App):
                 known_hosts=None,
             ) as conn:
                 tpu_log.set_status("Connected", "green")
-                command_str = " ".join(self.command)
-                tpu_log.write(f"{self.ssh_user}@{tpu.name}$ {command_str}")
                 async with conn.create_process(command_str) as process:
                     async for line in process.stdout:
                         tpu_log.write(line)
