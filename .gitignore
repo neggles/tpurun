@@ -234,3 +234,12 @@ $RECYCLE.BIN/
 
 # setuptools-scm _version file
 src/tpurun/_version.py
+
+# misc, temp, data, logs
+/misc/
+/temp/
+/data/
+/logs/
+
+# tpu list jsons
+/tpu*.json

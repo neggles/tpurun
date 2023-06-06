@@ -1,0 +1,17 @@
+#Header {
+    dock: top;
+    content-align: center middle;
+    background: indigo;
+    color: white;
+    margin-bottom: 1;
+}
+
+#Footer {
+    margin-top: 1;
+}
+
+SshLog {
+    width: 1fr;
+    max-height: 12;
+    min-height: 6
+}

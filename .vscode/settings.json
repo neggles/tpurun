@@ -5,9 +5,13 @@
 
   "[python]": {
     "editor.wordBasedSuggestions": false,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "none",
   "python.formatting.blackArgs": [
     "--line-length=110",
     "--config=${workspaceFolder}/pyproject.toml"
@@ -31,8 +35,8 @@
     "files.trimTrailingWhitespace": false
   },
 
-  "[makefile]": {
-    "editor.insertSpaces": false,
-    "editor.tabSize": 8
+  "css.lint.validProperties": ["dock", "content-align", "content-justify"],
+  "[css]": {
+    "editor.formatOnSave": true
   }
 }

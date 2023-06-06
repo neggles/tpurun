@@ -1,4 +1,4 @@
-from tpurun.app import app
+from tpurun.cli import cli
 
 if __name__ == "__main__":
-    app()
+    cli()

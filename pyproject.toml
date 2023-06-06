@@ -9,7 +9,22 @@ requires = [
 [tool.setuptools_scm]
 write_to = "src/tpurun/_version.py"
 
-# see https://github.com/psf/black/issues/683 for why this can't be in setup.cfg
 [tool.black]
 line-length = 110
-target-version = ['py38', 'py39', 'py310']
+target-version = [ 'py310']
+ignore = ['F841', 'F401', 'E501']
+
+[tool.ruff]
+line-length = 110
+target-version = 'py38'
+ignore = [
+    'F401'
+]
+
+[tool.ruff.isort]
+combine-as-imports = true
+force-wrap-aliases = true
+known-local-folder = ["src"]
+known-first-party = [
+    "tpurun",
+]
