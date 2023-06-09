@@ -26,14 +26,7 @@ def version_callback(value: bool):
 def callback(
     version: Annotated[
         Optional[bool],
-        typer.Option(
-            "--version",
-            "-v",
-            callback=version_callback,
-            is_eager=True,
-            help="Show version",
-            show_default=False,
-        ),
+        typer.Option("--version", "-v", callback=version_callback, is_eager=True, help="Show version"),
     ] = None,
 ):
     del version
