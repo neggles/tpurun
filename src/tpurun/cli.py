@@ -8,7 +8,10 @@ from tpurun import __version__, console
 from tpurun.app import TpuRunApp
 from tpurun.model import TpuType, TpuVm
 
-cli: typer.Typer = typer.Typer(rich_markup_mode="rich")
+cli: typer.Typer = typer.Typer(
+    context_settings=dict(help_option_names=["-h", "--help"]),
+    rich_markup_mode="rich",
+)
 
 
 def version_callback(value: bool):
