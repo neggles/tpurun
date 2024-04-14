@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import List, Optional
 
 import asyncssh
-import typer
 from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.widgets import Footer, Header, TextLog
@@ -13,8 +12,6 @@ from textual.worker import Worker, WorkerState
 
 from tpurun import __version__
 from tpurun.model import TpuType, TpuVm
-
-cli: typer.Typer = typer.Typer(no_args_is_help=True)
 
 
 class SshLog(TextLog):
